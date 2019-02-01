@@ -1,0 +1,19 @@
+<h1>Classes</h1>
+
+<table>
+  <tr>
+    <th>Class</th>
+    <th></th>
+    <th>Capacity</th>
+  </tr>
+  <% for gym_class in @gym_class %>
+  <tr>
+    <td><a href="/gym_classes/<%= gym_class.id %><%= gym_class.title %>"></a></td>
+    <td><%= gym_class.title %></td>
+    <td>|</td>
+    <td><%= gym_class.capacity %></td>
+  </tr>
+  <% end %>
+</table>
+
+<a href="/gym_classes/new"><input type="submit" value="Create a new Class"/>

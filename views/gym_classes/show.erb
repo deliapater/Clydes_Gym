@@ -1,0 +1,11 @@
+<!-- UPDATE! -->
+
+
+<h2><%= @gym_class.delete %></h2>
+
+<p>Class: <%= @members.title %></p>
+<p>Capacity: <%= @members.capacity%></p>
+
+<form action="/gym_classes/<%= @members.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+
+ 
