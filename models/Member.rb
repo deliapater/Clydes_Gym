@@ -63,4 +63,21 @@ class Member
     results = SqlRunner.run(sql, values)
     return results.map { |gym_class| GymClass.new(gym_class) }
   end
+
+  def update()
+    sql = "UPDATE members
+    SET
+    (
+      first_name,
+      last_name,
+      age
+    ) =
+    (
+      $1, $2, $3
+    )
+    WHERE id = $4"
+    values = [@first_name, @last_name,@age, @id]
+    SqlRunner.run(sql, values)
+  end
+
 end

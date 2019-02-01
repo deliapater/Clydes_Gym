@@ -53,11 +53,26 @@ end
     SqlRunner.run( sql, values )
   end
 
-  def members() ######
+  def members()
     sql = "SELECT m.* FROM members m INNER JOIN bookings b ON b.member_id = m.id WHERE b.gym_class_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |member| GymClass.new(member) }
+  end
+
+  def update()
+    sql = "UPDATE gym_classes
+    SET
+    (
+      title,
+      capacity
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@title, @capacity, @id]
+    SqlRunner.run(sql, values)
   end
 
 end

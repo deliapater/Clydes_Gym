@@ -68,4 +68,20 @@ class Booking
     return GymClass.new( results.first )
   end
 
+
+  def update()
+    sql = "UPDATE bookings
+    SET
+    (
+      member_id,
+      gym_class_id
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@member_id, @gym_class_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
 end

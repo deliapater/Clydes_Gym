@@ -5,7 +5,9 @@
 <h3>Gym Classes:</h3>
 
 <ul>
-  <% @classes do |gym_class| %>
+  <% for gym_class in @classes %>
   <li><%= gym_class.title %></li>
   <% end %>
 </ul>
+
+<a href="/members/<%= @member.id %>/edit">Edit</a>
