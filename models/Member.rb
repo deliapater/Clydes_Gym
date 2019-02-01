@@ -1,4 +1,5 @@
 require_relative( '../db/sql_runner' )
+require_relative('./GymClass.rb')
 
 class Member
 
@@ -6,10 +7,10 @@ class Member
   attr_accessor :first_name, :last_name, :age
 
   def initialize(options)
-    @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
     @age = options['age'].to_i
+    @id = options['id'].to_i if options['id']
 
   end
 
@@ -57,7 +58,7 @@ class Member
   end
 
   def gym_classes()
-    sql = "SELECT g.* FROM gym_classes g INNER JOIN bookings b ON g.gym_id = g.id WHERE b.member_id = $1;"
+    sql = "SELECT g.* FROM gym_classes g INNER JOIN bookings b ON b.gym_class_id = g.id WHERE b.member_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map { |gym_class| GymClass.new(gym_class) }

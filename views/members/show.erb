@@ -1,0 +1,11 @@
+<h1>Member <%= @member.first_name %> <%= @member.last_name %></h1>
+
+<p>Age: <%= @member.age %></p>
+
+<h3>Gym Classes:</h3>
+
+<ul>
+  <% @classes do |gym_class| %>
+  <li><%= gym_class.title %></li>
+  <% end %>
+</ul>
