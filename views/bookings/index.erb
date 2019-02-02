@@ -1,0 +1,19 @@
+<h1>Bookings</h1>
+
+  <table>
+    <tr>
+      <th>Members</th>
+      <td>|</td>
+      <th></th>
+      <th>Classes</th>
+    </tr>
+    <% for booking in @bookings %>
+    <tr>
+      <td><%= booking.member.first_name %> <%= booking.member.last_name %></td>
+      <td>|</td>
+      <td><%= booking.gym_class.title %></td>
+    </tr>
+    <% end %>
+  </table>
+<br>
+<a href="/bookings/edit"><input type="submit" value="Assign Member to a Class"/>
