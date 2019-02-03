@@ -1,0 +1,19 @@
+input[type="submit"] {
+  text-transform: uppercase;
+  font-family: 'Roboto', serif;
+}
+
+select {
+ width: 150px;
+ padding: 5px 35px 5px 5px;
+ margin: 15px 0;
+ font-size: 0.8em;
+ font-family: 'Merriweather', serif;
+ border: 1px solid #eee;
+ display: block;
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}

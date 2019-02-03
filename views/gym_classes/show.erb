@@ -4,4 +4,4 @@
 <p>Class: <%= @gym_class.title %></p>
 <p>Capacity: <%= @gym_class.capacity%></p>
 
-<form action="/gym_classes/:id<%= @gym_class.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<form action="/gym_classes/<%= @gym_class.id %>" method="POST"><input class="btn btn--action" type="submit" value="Delete Class"></form>

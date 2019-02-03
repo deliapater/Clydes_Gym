@@ -1,0 +1,55 @@
+body {
+  background: black url('/images/gym_background.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: black;
+  font-family: 'Roboto', serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: black;
+  margin-bottom: 20px;
+}
+
+
+a, a:link, a:visited {
+  color:  #00cccc;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #c6e2ff;
+}
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px
+}
+
+ul {
+  padding: 10px;
+  margin: 10px;
+  list-style-type: none;
+}
+
+main {
+  padding: 25px;
+}

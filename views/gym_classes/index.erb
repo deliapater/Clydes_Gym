@@ -1,4 +1,4 @@
-<h1>Classes</h1>
+<h1>Gym Classes</h1>
 
 <table>
   <tr>
@@ -8,14 +8,11 @@
   </tr>
   <% for gym_class in @gym_class %>
   <tr>
-    <td><a href="/gym_classes/<%= gym_class.id %><%= gym_class.title %>"></a></td>
-    <td><%= gym_class.title %></td>
+    <td><a href="/gym_classes/<%= gym_class.id%>"><%= gym_class.title %></a></td>
     <td>|</td>
     <td><%= gym_class.capacity %></td>
   </tr>
   <% end %>
 </table>
-
-<a href="/gym_classes/new"><input type="submit" value="Create a new Class"/>
-
-<a href="/gym_classes/:id"><input type="submit" value="Delete a Class"/>
+<br>
+<a href="/gym_classes/new"><input class="btn" type="submit" value="Create a new Class"/>

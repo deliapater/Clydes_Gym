@@ -32,9 +32,9 @@ post '/gym_classes/:id' do
   redirect to "/gym_classes/#{params['id']}"
 end
 
-post '/gym_classes/:id/delete' do
+post '/gym_classes/:id' do
   @gym_class = GymClass.find(params['id'].to_i)
   gym_class = GymClass.find(params['id'])
-  student.delete
+  gym_class.delete
   redirect to '/gym_classes'
 end
