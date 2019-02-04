@@ -4,13 +4,14 @@ require_relative('./GymClass.rb')
 class Member
 
   attr_reader :id
-  attr_accessor :first_name, :last_name, :age
+  attr_accessor :first_name, :last_name, :age, :premium_membership
 
   def initialize(options)
     @first_name = options['first_name']
     @last_name = options['last_name']
     @age = options['age'].to_i
     @id = options['id'].to_i if options['id']
+    @premium_membership = options['premium_membership']
 
   end
 
@@ -19,14 +20,15 @@ class Member
     (
       first_name,
       last_name,
-      age
+      age,
+      premium_membership
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@first_name, @last_name, @age]
+    values = [@first_name, @last_name, @age, @premium_membership]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -70,13 +72,14 @@ class Member
     (
       first_name,
       last_name,
-      age
+      age,
+      premium_membership
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
-    WHERE id = $4"
-    values = [@first_name, @last_name,@age, @id]
+    WHERE id = $5"
+    values = [@first_name, @last_name,@age, @premium_membership, @id]
     SqlRunner.run(sql, values)
   end
 

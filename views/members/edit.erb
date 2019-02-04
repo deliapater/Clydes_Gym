@@ -16,10 +16,16 @@
       <label for="age">Age:</label>
       <input type="number" name="age" id="age" value="<%= @member.age %>"/>
     </div>
+    <br>
+    <label>
+      Premium Membership:
+      <select name="premium_membership">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </label>
 <br>
     <div>
       <input class="btn" type="submit" value="Enrol Member"/>
     </div>
-
-
 </form>

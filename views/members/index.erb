@@ -7,6 +7,8 @@
     <th>Last Name</th>
     <th></th>
     <th>Age</th>
+    <th></th>
+    <th>Premium Membership</th>
   </tr>
   <% for member in @members %>
   <tr>
@@ -15,6 +17,8 @@
     <td><%= member.last_name %></td>
     <td>|</td>
     <td><%= member.age %></td>
+    <td>|</td>
+    <td><%= member.premium_membership %></td>
   </tr>
   <% end %>
 </table>

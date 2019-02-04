@@ -7,7 +7,8 @@ CREATE TABLE members
   id SERIAL8 primary key,
   first_name VARCHAR(255) not null,
   last_name VARCHAR(255) not null,
-  age INT4
+  age INT4,
+  premium_membership VARCHAR(255)
 );
 
 CREATE TABLE gym_classes

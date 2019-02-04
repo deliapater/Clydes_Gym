@@ -35,3 +35,11 @@ post '/members/:id' do
   member.update
   redirect to "/members/#{params['id']}"
 end
+
+
+post '/members/:id/update' do
+  @member = Member.find(params['id'].to_i)
+  member = Member.new(params)
+  member.update
+  redirect to "/members/#{params['id']}"
+end

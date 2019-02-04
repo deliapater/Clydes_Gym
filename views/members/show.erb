@@ -2,6 +2,8 @@
 
 <p>Age: <%= @member.age %></p>
 
+<p>Premium Membership: <%= @member.premium_membership %></p>
+
 <h3>Gym Classes:</h3>
 
 <ul>
@@ -10,4 +12,4 @@
   <% end %>
 </ul>
 
-<a href="/members/<%= @member.id %>/edit">Edit</a>
+<a href="/members/<%= @member.id %>/edit"><input class="btn" type="submit" value="Edit"/>

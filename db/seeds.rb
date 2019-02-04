@@ -10,28 +10,32 @@ GymClass.delete_all()
 member1 = Member.new({
   "first_name" => "Juan",
   "last_name" => "Molero",
-  "age" => 27
+  "age" => 27,
+  "premium_membership" => "Yes"
 })
 member1.save
 
 member2 = Member.new({
   "first_name" => "Nathaly",
   "last_name" => "Paternina",
-  "age" => 21
+  "age" => 21,
+  "premium_membership" => "Yes"
 })
 member2.save
 
 member3 = Member.new({
   "first_name" => "Cleyra",
   "last_name" => "Uzcategui",
-  "age" => 28
+  "age" => 28,
+  "premium_membership" => "No"
 })
 member3.save
 
 member4 = Member.new({
   "first_name" => "Paola",
   "last_name" => "Aguilar",
-  "age" => 31
+  "age" => 31,
+  "premium_membership" => "No"
 })
 member4.save
 
