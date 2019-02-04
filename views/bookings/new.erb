@@ -1,7 +1,6 @@
 <h1>Assign a Member to a Class</h1>
 
-<form action="/bookings/new/update
-" method="post">
+<form action="/bookings" method="post">
   <label>
   Select a Member:
     <select name="member_id">
@@ -13,7 +12,7 @@
 
   <label>
     Select a Class:
-    <select name="gym_classes_id">
+    <select name="gym_class_id">
       <% for gym_class in @gym_classes %>
       <option value="<%= gym_class.id %>"><%= gym_class.title %></option>
       <% end %>

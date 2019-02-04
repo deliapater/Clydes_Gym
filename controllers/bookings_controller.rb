@@ -18,8 +18,8 @@ get '/bookings/new' do
   erb(:"bookings/new")
 end
 
-post '/bookings/new' do
-  booking = Booking.new(params[:id])
+post '/bookings' do
+  booking = Booking.new(params)
   booking.save
   redirect to '/bookings'
 end
