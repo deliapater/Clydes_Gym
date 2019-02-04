@@ -2,7 +2,7 @@
 
 <form action="/bookings" method="post">
   <label>
-  Select a Member:
+    Select a Member:
     <select name="member_id">
       <% for member in @members %>
       <option value="<%= member.id %>"><%= member.first_name %> <%= member.last_name %></option>
@@ -14,7 +14,9 @@
     Select a Class:
     <select name="gym_class_id">
       <% for gym_class in @gym_classes %>
+      <% if gym_class.left_spaces %>
       <option value="<%= gym_class.id %>"><%= gym_class.title %></option>
+      <% end %>
       <% end %>
     </select>
   </label>

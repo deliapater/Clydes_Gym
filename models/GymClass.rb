@@ -3,26 +3,34 @@ require_relative( '../db/sql_runner' )
 class GymClass
 
   attr_reader( :id)
-  attr_accessor( :title, :capacity)
+  attr_accessor( :title, :capacity, :time)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @title = options['title']
     @capacity = options['capacity'].to_i
+    @time = options['time']
+  end
+
+  def left_spaces()
+    members_booked = self.members().count()
+    if members_booked < @capacity
+      return true
+    end
   end
 
   def save()
     sql = "INSERT INTO gym_classes
     (
       title,
-      capacity
+      capacity, time
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     )
     RETURNING id"
-    values = [@title, @capacity]
+    values = [@title, @capacity, @time]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -39,12 +47,12 @@ class GymClass
   end
 
   def GymClass.find( id )
-  sql = "SELECT * FROM gym_classes
-  WHERE id = $1"
-  values = [id]
-  results = SqlRunner.run( sql, values )
-  return GymClass.new( results.first )
-end
+    sql = "SELECT * FROM gym_classes
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return GymClass.new( results.first )
+  end
 
   def GymClass.delete(id)
     sql = "DELETE FROM gym_classes
@@ -57,7 +65,7 @@ end
     sql = "SELECT m.* FROM members m INNER JOIN bookings b ON b.member_id = m.id WHERE b.gym_class_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return results.map { |member| GymClass.new(member) }
+    return results.map { |member| Member.new(member) }
   end
 
   def update()
@@ -65,14 +73,15 @@ end
     SET
     (
       title,
-      capacity
-    ) =
-    (
-      $1, $2
-    )
-    WHERE id = $3"
-    values = [@title, @capacity, @id]
-    SqlRunner.run(sql, values)
-  end
+      capacity,
+      time
+      ) =
+      (
+        $1, $2, $3
+      )
+      WHERE id = $4"
+      values = [@title, @capacity, @time, @id]
+      SqlRunner.run(sql, values)
+    end
 
-end
+  end

@@ -37,25 +37,29 @@ member4.save
 
 gym_class1 = GymClass.new({
   "title" => "Spinning",
-  "capacity" => 20
+  "capacity" => 20,
+  "time" => "08:00"
 })
 gym_class1.save
 
 gym_class2 = GymClass.new({
   "title" => "Yoga",
-  "capacity" => 25
+  "capacity" => 20,
+  "time" => "20:00"
 })
 gym_class2.save
 
 gym_class3 = GymClass.new({
   "title" => "HIT",
-  "capacity" => 25
+  "capacity" => 25,
+  "time" => "18:45"
 })
 gym_class3.save
 
 gym_class4 = GymClass.new({
   "title" => "CrossFit",
-  "capacity" => 20
+  "capacity" => 0,
+  "time" => "07:00"
 })
 gym_class4.save
 

@@ -12,7 +12,8 @@ class GymClassTest < MiniTest::Test
   end
 
   def test_gym_class_has_capacity
-      assert_equal(20, @gym_class.capacity)  ###### 
+      assert_equal(20, @gym_class.capacity)
   end
+
 
 end

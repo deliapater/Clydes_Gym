@@ -9,7 +9,7 @@ get '/gym_classes' do
 end
 
 get '/gym_classes/new' do
-  @gym_class = GymClass.all
+  @gym_classes = GymClass.all
   erb(:"gym_classes/new")
 end
 
