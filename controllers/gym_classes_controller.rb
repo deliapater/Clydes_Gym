@@ -2,7 +2,6 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/GymClass.rb' )
 
-# UPDATE
 
 get '/gym_classes' do
   @gym_class = GymClass.all()
@@ -25,16 +24,14 @@ get '/gym_classes/:id' do
   erb(:"gym_classes/show")
 end
 
-post '/gym_classes/:id' do
+post '/gym_classes/:id/update' do
   @gym_class = GymClass.find(params['id'].to_i)
   gym_class = GymClass.new(params)
   gym_class.update
   redirect to "/gym_classes/#{params['id']}"
 end
 
-post '/gym_classes/:id' do
-  @gym_class = GymClass.find(params['id'].to_i)
-  gym_class = GymClass.find(params['id'])
-  gym_class.delete
+post '/gym_classes/:id/delete' do
+  GymClass.delete(params['id'])
   redirect to '/gym_classes'
 end
