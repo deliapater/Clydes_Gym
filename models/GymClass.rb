@@ -16,8 +16,9 @@ class GymClass
 
 
   def premium_gym()
-      if @premium_class == "true"
+      if @premium_class == "Yes"
       return true
+    else return nil
     end
   end
 

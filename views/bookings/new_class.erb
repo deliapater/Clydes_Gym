@@ -1,6 +1,7 @@
 <h1>Create a Booking</h1>
 
-<form action="/bookings/new_class" method="post">
+<form action="/bookings" method="POST">
+  <% if @member.premium == true %>
   <label>
     Select a Premium Class:
     <select name="gym_class_id">
@@ -9,7 +10,7 @@
       <option value="<%= gym_class.id %>"><%= gym_class.title %></option>
       <% end %>
       <% end %>
-
+      <% end %>
     </select>
   </label>
 

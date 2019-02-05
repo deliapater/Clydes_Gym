@@ -16,7 +16,7 @@ class Member
   end
 
   def premium()
-      if @premium_membership == true
+      if @premium_membership == "Yes"
       return true
     end
   end

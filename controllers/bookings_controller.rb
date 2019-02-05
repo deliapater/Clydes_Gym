@@ -36,7 +36,7 @@ post '/bookings' do
   redirect to '/bookings/new_member/new_class'
 end
 
-post '/bookings' do
+post '/bookings/new_member/new_class' do
   booking = Booking.new(params)
   booking.save
   redirect to '/bookings'
