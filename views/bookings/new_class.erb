@@ -16,6 +16,7 @@
   </label>
 
 <% if @member.premium != true%>
+<input type="text" name="member_id" value="<%= @member.id %>" hidden/>
   <label>
     Select a Class:
     <select name="gym_class_id">
