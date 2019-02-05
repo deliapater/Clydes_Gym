@@ -6,6 +6,8 @@
     <th></th>
     <th>Capacity</th>
     <th></th>
+    <th>Date</th>
+    <th></th>
     <th>Time</th>
   </tr>
   <% for gym_class in @gym_class %>
@@ -13,6 +15,8 @@
     <td><a href="/gym_classes/<%= gym_class.id%>"><%= gym_class.title %></a></td>
     <td>|</td>
     <td><%= gym_class.capacity %></td>
+    <td>|</td>
+    <td><%= gym_class.date_class %></td>
     <td>|</td>
     <td><%= gym_class.time %></td>
   </tr>

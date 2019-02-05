@@ -3,5 +3,7 @@
 
 <p>Class: <%= @gym_class.title %></p>
 <p>Capacity: <%= @gym_class.capacity%></p>
+<p>Date: <%= @gym_class.date_class%></p>
+<p>Time: <%= @gym_class.time%></p>
 
 <form action="/gym_classes/<%= @gym_class.id %>/delete" method="POST"><input class="btn btn--action" type="submit" value="Delete Class"></form>

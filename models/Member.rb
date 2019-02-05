@@ -15,6 +15,12 @@ class Member
 
   end
 
+  def premium()
+      if @premium_membership == true
+      return true
+    end
+  end
+
   def save()
     sql = "INSERT INTO members
     (

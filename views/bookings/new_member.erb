@@ -1,0 +1,13 @@
+<h1>Create a Booking</h1>
+
+<form action="/bookings/new_member/new_class" method="get">
+  <label>
+    Select a Member:
+    <select name="member_id">
+      <% for member in @members %>
+      <option value="<%= member.id %>"><%= member.first_name %> <%= member.last_name %></option>
+      <% end %>
+    </select>
+  </label>
+  <input class="btn" type='submit' value="Done">
+</form>

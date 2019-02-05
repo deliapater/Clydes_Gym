@@ -1,0 +1,28 @@
+<h1>Create a Booking</h1>
+
+<form action="/bookings/new_class" method="post">
+  <label>
+    Select a Premium Class:
+    <select name="gym_class_id">
+      <% for gym_class in @gym_classes %>
+      <% if gym_class.left_spaces && gym_class.premium_gym %>
+      <option value="<%= gym_class.id %>"><%= gym_class.title %></option>
+      <% end %>
+      <% end %>
+
+    </select>
+  </label>
+
+  <label>
+    Select a Class:
+    <select name="gym_class_id">
+      <% for gym_class in @gym_classes %>
+      <% if gym_class.left_spaces && !gym_class.premium_gym %>
+      <option value="<%= gym_class.id %>"><%= gym_class.title %></option>
+      <% end %>
+      <% end %>
+    </select>
+  </label>
+
+  <input class="btn" type='submit' value="Done">
+</form>

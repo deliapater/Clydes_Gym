@@ -5,6 +5,8 @@
       <th>Members</th>
       <th></th>
       <th>Classes</th>
+      <th></th>
+      <th>Time</th>
 
     </tr>
     <% for booking in @bookings %>
@@ -12,8 +14,10 @@
       <td><%= booking.member.first_name %> <%= booking.member.last_name %></td>
       <td>|</td>
       <td><%= booking.gym_class.title %></td>
+      <td>|</td>
+      <td><%= booking.gym_class.time %></td>
     </tr>
     <% end %>
   </table>
 <br>
-<a href="/bookings/new"><input class="btn" type="submit" value="Create a New Booking"/>
+<a href="/bookings/new_member"><input class="btn" type="submit" value="Create a New Booking"/>

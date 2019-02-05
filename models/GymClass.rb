@@ -3,13 +3,22 @@ require_relative( '../db/sql_runner' )
 class GymClass
 
   attr_reader( :id)
-  attr_accessor( :title, :capacity, :time)
+  attr_accessor( :title, :capacity, :time, :date_class, :premium_class)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @title = options['title']
     @capacity = options['capacity'].to_i
     @time = options['time']
+    @date_class = options['date_class']
+    @premium_class = options['premium_class']
+  end
+
+
+  def premium_gym()
+      if @premium_class == "true"
+      return true
+    end
   end
 
   def left_spaces()
@@ -23,14 +32,17 @@ class GymClass
     sql = "INSERT INTO gym_classes
     (
       title,
-      capacity, time
+      capacity,
+      time,
+      date_class,
+      premium_class
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@title, @capacity, @time]
+    values = [@title, @capacity, @time, @date_class, @premium_class]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -74,13 +86,15 @@ class GymClass
     (
       title,
       capacity,
-      time
+      time,
+      date_class,
+      premium_class
       ) =
       (
-        $1, $2, $3
+        $1, $2, $3, $4, $5
       )
-      WHERE id = $4"
-      values = [@title, @capacity, @time, @id]
+      WHERE id = $6"
+      values = [@title, @capacity, @time, @date_class, @premium_class, @id]
       SqlRunner.run(sql, values)
     end
 
