@@ -15,3 +15,34 @@ th {
 table {
   border-collapse: collapse;
 }
+
+.box-shadow_m_index {
+  margin-left: 20px;
+  background-color: white;
+  border: 1px solid black;
+  opacity: 0.6;
+  width: 400px;
+  padding: 10px;
+  filter: alpha(opacity=60);
+
+}
+
+.box-shadow_g_index {
+  margin-left: 20px;
+  background-color: white;
+  border: 1px solid black;
+  opacity: 0.6;
+  width: 400px;
+  padding: 10px;
+  filter: alpha(opacity=60);
+}
+
+.box-shadow_b_index {
+  margin-left: 20px;
+  background-color: white;
+  border: 1px solid black;
+  opacity: 0.6;
+  width: 450px;
+  padding: 10px;
+  filter: alpha(opacity=60);
+}
